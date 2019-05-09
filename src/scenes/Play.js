@@ -186,7 +186,7 @@ export default class PlayScene {
                         {
                             name: 'shotty', 
                             id: 'shotGunIcon', 
-                            qty: 999, 
+                            qty: 99, 
                             areaOfDamage: 1, 
                             gunPath: require('../assets/shottyGraphic.png'),
                             bulletPath: require('../assets/shottySpray.png'), 
