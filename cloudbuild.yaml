@@ -16,4 +16,4 @@ steps:
   - 'my-container=gcr.io/spots/coloriq:$REVISION_ID'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=color-iq-dev'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=staging'
