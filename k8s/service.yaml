@@ -1,3 +1,14 @@
+kind: Ingress
+metadata:
+  name: coloriq
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /game/*
+        backend:
+          serviceName: coloriq
+          servicePort: 80
 kind: Service
 apiVersion: v1
 metadata:
