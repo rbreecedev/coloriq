@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: coloriq
+  name: coloriq
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: coloriq
+  template:
+    metadata:
+      labels:
+        run: coloriq
+    spec:
+      containers:
+      - image: gcr.io/coloriq/coloriq:latest
+        name: coloriq
+        ports:
+        - containerPort: 80
