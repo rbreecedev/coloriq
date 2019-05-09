@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server",
-    "build": "cp Dockerfile ./dist && webpack && docker build -t coloriq .",
-    "dev-container": "npm run build && docker run -d -p 80:80 -v $PWD/dist/:/usr/local/apache2/htdocs/ coloriq && webpack -w",
+    "build": "cp Dockerfile ./dist && webpack",
+    "dev-container": "npm run build && docker build -t coloriq . && docker run -d -p 80:80 -v $PWD/dist/:/usr/local/apache2/htdocs/ coloriq && webpack -w",
     "stop-container": "docker stop $(docker ps -q --filter ancestor=coloriq )"
   },
   "author": "",
