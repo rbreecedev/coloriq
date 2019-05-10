@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: coloriq-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /game/*
+        backend:
+          serviceName: coloriq
+          servicePort: 80

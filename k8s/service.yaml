@@ -1,24 +1,13 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: coloriq-ingress
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /game/*
-        backend:
-          serviceName: coloriq
-          servicePort: 80
-kind: Service
 apiVersion: v1
-metadata:
+kind: Service
+metadata:  
   name: coloriq
 spec:
-  selector:
-     run: coloriq
-  ports:
-  - protocol: TCP
+  selector:    
+    run: coloriq
+  type: ClusterIP
+  ports:  
+  - name: http
     port: 80
     targetPort: 80
-  type: NodePort
+    protocol: TCP
