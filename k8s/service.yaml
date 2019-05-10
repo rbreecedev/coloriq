@@ -1,12 +1,24 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: coloriq
+  name: coloriq-web-service
 spec:
+  type: NodePort
   selector:
-     run: coloriq
+    run: coloriq
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-  type: LoadBalancer
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: coloriq-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /game/*
+        backend:
+          serviceName: coloriq-web-service
+          servicePort: 80
