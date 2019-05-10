@@ -29,13 +29,12 @@ export default class LoadScene {
         this.loadTicker = new PIXI.ticker.Ticker();
     }
     async init () {
-        let s = await this.getSounds();
-        this.richText.position= new PIXI.Point((this.config.width / 2)-(this.richText.width / 2), (this.config.height / 2)-(this.richText.height / 2+100));
         this.app.stage.addChild(this.richText);
-
+        this.richText.position= new PIXI.Point((this.config.width / 2)-(this.richText.width / 2), (this.config.height / 2)-(this.richText.height / 2+100));
+        let s = await this.getSounds();
         return new Promise((resolve, reject) => {
             this.loadTicker.stop();
-            this.startTime.setSeconds(this.startTime.getSeconds() + 1);
+            this.startTime.setSeconds(this.startTime.getSeconds() + 5);
             this.loadTicker.add((deltaTime) => {
                 let time = Math.floor((this.startTime - Date.now()) / 1000);
                 if (time <= 0) {
