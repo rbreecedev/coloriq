@@ -9,4 +9,4 @@ spec:
       - path: /game/*
         backend:
           serviceName: coloriq
-          servicePort: 8080
+          servicePort: 80
