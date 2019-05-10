@@ -24,6 +24,9 @@ export default class Bubble {
         this.bubble.on('click', (e) => {
             this.click(this.bubble.accessibleHint);
         });
+        this.bubble.on('tap', (e) => {
+            this.click(this.bubble.accessibleHint);
+        });
         this.bubble.buttonMode= true;
         this.count = 0;
         this.lastCount = 1;
