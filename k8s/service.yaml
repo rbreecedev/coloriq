@@ -1,6 +1,7 @@
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: coloriq
+  name: coloriq-ingress
 spec:
   rules:
   - http:
@@ -8,16 +9,4 @@ spec:
       - path: /game/*
         backend:
           serviceName: coloriq
-          servicePort: 80
-kind: Service
-apiVersion: v1
-metadata:
-  name: coloriq
-spec:
-  selector:
-     run: coloriq
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-  type: LoadBalancer
+          servicePort: 8080
