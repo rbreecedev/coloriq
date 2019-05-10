@@ -10,3 +10,13 @@ spec:
         backend:
           serviceName: coloriq
           servicePort: 80
+kind: Service
+metadata:
+  name: coloriq-service
+spec:
+  selector:
+    app: coloriq
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
